@@ -1,0 +1,18 @@
+# Cloudflare configuration for Itinerary Generator
+name = "itinerary-generator"
+compatibility_date = "2023-10-30"
+
+# Enable the D1 database
+[[d1_databases]]
+binding = "DB"
+database_name = "itinerary-generator-db"
+database_id = "local"
+
+[site]
+bucket = "./.next/static"
+
+[build]
+command = "npm run build"
+
+[env.production]
+workers_dev = true
